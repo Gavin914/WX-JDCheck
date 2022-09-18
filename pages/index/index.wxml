@@ -1,0 +1,77 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class="title">信息查询</view>
+  <view class="top_tip" wx:if="{{status !== 2}}">当前位置：{{cityCN}}</view>
+  <view class="top_tip" wx:if="{{status === 2}}">{{cityCN}}</view>
+
+  <view class="top_tip">更新时间：{{time}}</view>
+
+  <view class="poster" wx:if='{{isSuccess}}'>
+  <view class="advert">
+    <view bindtap="close">X</view>
+    <image src="src/img/gID.png" mode="widthFix"></image>
+  </view>
+
+</view>
+
+  <!--屏幕背景变暗的背景 -->
+  <view class="poster" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+  <!--弹出框 -->
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showView}}">
+    <view class="QAA" wx:key="ID" wx:for="{{FAQ}}" wx:for-item="QAA">
+      <view class="Q">{{QAA.Q}}</view>
+      <view class="A">{{QAA.A}}</view>
+    </view>
+  </view>
+
+  <!-- FAQ Section -->
+  <button plain='true' class="circle" bindtap="clickme">
+    <image mode='aspectFill' src='src/img/faq.png' class='image'></image>
+  </button>
+
+  <!-- Address Section -->
+  <button plain='true' class="circleSec" bindtap="clickAddress">
+    <image mode='aspectFill' src='src/img/address.png' class='image'></image>
+  </button>
+
+  <!-- Poster Section -->
+  <view class="power" wx:key="title" wx:for="{{poster}}" wx:for-item="poster">
+    <view class="power_info" data-index="{{index}}" bindtap="open">
+      <view style="align-content:center;" class="power_info_text_title">{{poster.title}}</view>
+      <view style="font-size: 22rpx;" class="power_info_text_tip">{{poster.tip}}</view>
+    </view>
+  </view>
+
+  <!-- Item Section -->
+  <view class="power" wx:key="title" wx:for="{{powerList}}" wx:for-item="power">
+    <view class="power_info" data-index="{{index}}">
+      <view class="power_info_text" data-sku="{{power.sku}}">
+        <view class="power_info_text_title">{{power.title}}</view>
+        <view class="power_info_text_tip">{{power.tip}}</view>
+      </view>
+
+      <view wx:if="{{power.book === 2}}"  class="power_info_available" data-sku="{{power.sku}}">预约</view>
+      <view wx:elif="{{power.available === 33 && power.state === 1}}" class="power_info_available" bindtap="naviToJD" data-sku="{{power.sku}}">抢购</view>
+      <view wx:elif="{{power.available === 40 && power.state === 1}}" class="power_info_available" bindtap="naviToJD" data-sku="{{power.sku}}">配货</view>
+      <view wx:elif="{{power.available === 36 && power.state === 1}}" class="power_info_available" bindtap="naviToJD" data-sku="{{power.sku}}">采购</view>
+      <view wx:elif="{{power.available === 33 && power.state === 0}}" class="power_info_notavailable" data-sku="{{power.sku}}">有货下架</view>
+      <view wx:elif="{{power.available === 40 && power.state === 0}}" class="power_info_notavailable" data-sku="{{power.sku}}">配货下架</view>
+      <view wx:elif="{{power.available === 36 && power.state === 0}}" class="power_info_notavailable" data-sku="{{power.sku}}">采购下架</view>
+      <view wx:elif="{{power.state === 0}}" class="power_info_notavailable" data-sku="{{power.sku}}">下架</view>
+      <view wx:else="{{power.available === 34}}"  class="power_info_notavailable" data-sku="{{power.sku}}">无货</view>
+
+      
+      <!-- <view  wx:if="{{power.subscribe === -1}}" class="power_info_available" bindtap="subscript">订阅</view>
+      <view  wx:else="{{power.subscribe === 0}}" class="power_info_available" bindtap="subscript_fail">已订</view> -->
+
+      <view wx:if="{{power.book !== 1 && (power.available !== 33 || power.state !== 1) && (power.available !== 36 || power.state !== 1) && (power.available !== 40 || power.state !== 1)}}" class="power_info_available" bindtap="alert"> 订阅 </view>
+      
+    
+    </view>
+  </view>
+
+   <view class="environment">Version 1.4</view>
+  <view style="margin-top: 2%;" class="environment">Developed by Gamers | Service for Gamers</view>
+</view>
+  

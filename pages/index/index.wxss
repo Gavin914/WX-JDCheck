@@ -1,0 +1,265 @@
+/**index.wxss**/
+
+page {
+  padding-top: 54rpx;
+  background-color: #f6f6f6;
+  padding-bottom: 60rpx;
+}
+
+.title {
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #000000;
+  font-size: 44rpx;
+  margin-bottom: 40rpx;
+}
+
+.top_tip {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #888888;
+  margin-bottom: 15rpx;
+}
+
+.button {
+  margin-top: 30rpx;
+  border-radius: 5px;
+  background-color: #1aad19;
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#1aad19),to(#1aad19));
+  background-image: linear-gradient(to bottom,#1aad19 0,#1aad19 100%);
+  border-color: #1aad19;
+  color: #fff;
+  width: 93%;
+  padding-bottom: 1rpx;
+  font-size: 14px;
+  border-width: 1px;
+  border-style: solid;
+  cursor: pointer;
+  display: inline-block;
+  overflow: visible;
+  padding: 0 22px;
+  height: 30px;
+  line-height: 28px;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+}
+
+.power {
+  margin-top: 30rpx;
+  border-radius: 5px;
+  background-color: white;
+  width: 93%;
+  padding-bottom: 1rpx;
+}
+
+.power_info {
+  display: flex;
+  padding: 30rpx 25rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.power_info_more {
+  width: 30rpx;
+  height: 30rpx;
+  transform: rotate(90deg);
+}
+
+.power_info_less {
+  width: 30rpx;
+  height: 30rpx;
+  transform: rotate(270deg);
+}
+
+.power_info_text {
+  width: 215px;
+  display: flex;
+  flex-direction: column;
+}
+
+.power_info_text_title {
+  margin-bottom: 10rpx;
+  font-weight: 400;
+  font-size: 35rpx;
+}
+
+.power_info_text_tip {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 25rpx;
+}
+
+.power_info_available {
+  color: #1aad19;
+  font-size: 32rpx;
+}
+
+.power_info_notavailable {
+  color: rgba(255, 4, 4, 0.863);
+  font-size: 32rpx;
+}
+
+.power_info_state {
+  color: #1aad19;
+  font-size: 32rpx;
+  float: right;
+}
+
+.power_info_notstate {
+  color: rgba(255, 4, 4, 0.4);
+  font-size: 32rpx;
+  float: right;
+}
+
+.power_item {
+  padding: 30rpx 25rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.power_item_title {
+  font-size: 30rpx;
+}
+
+.power_item_icon {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.line {
+  width: 95%;
+  margin: 0 auto;
+  height: 2rpx;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.environment {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 24rpx;
+  margin-top: 35%;
+}
+
+.poster {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.advert {
+  width: 550rpx;
+  height: 750rpx;
+  position: relative;
+}
+
+.advert image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+
+.advert view {
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  border-radius: 50%;
+  border: 1rpx solid #fff;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  bottom: -13%;
+  transform: translate(-50%, 0);
+}
+
+.image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.circle[plain] {
+  display: flex;
+  margin-right: 40rpx;
+  right: 0;
+  position: fixed;
+  bottom: 15%;
+  padding: 0;
+  border: none;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.circleSec[plain] {
+  display: flex;
+  margin-right: 40rpx;
+  right: 0;
+  position: fixed;
+  bottom: 25%;
+  padding: 0;
+  border: none;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+/* .commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+} */
+/*弹出框 */
+
+.commodity_attr_box {
+  height: 750rpx;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding-top: 20rpx;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.QAA{
+  height: 17%;
+  display: flex;
+  padding: 25rpx;
+  /* align-items: center; */
+  justify-content: space-between;
+}
+
+.Q {
+  width: 90%;
+  font-weight: 400;
+  font-size: 35rpx;
+  margin-left: 2%;
+  margin-right: 2%;
+  position: absolute;
+}
+
+.A {
+  height: 10%;
+  width: 90%;
+  margin-top: 8%;
+  margin-left: 2%;
+  margin-right: 2%;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 25rpx;
+  position: absolute;
+}
